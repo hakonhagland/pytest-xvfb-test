@@ -40,8 +40,12 @@ jobs:
           curl -sSL https://install.python-poetry.org | python3 -
           poetry install
 
+#      - name: Run unit tests
+#        uses: coactions/setup-xvfb@v1
+#        with:
+#          run: |
+#            poetry run python -m pytest
+
       - name: Run unit tests
-        uses: coactions/setup-xvfb@v1
-        with:
-          run: |
+        run: |
             poetry run python -m pytest
